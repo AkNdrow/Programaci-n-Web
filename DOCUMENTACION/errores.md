@@ -23,3 +23,22 @@ Al investigar el estado del repositorio y el código, se encontraron dos causas 
 ### Solución
 1. **Para los estilos generales:** Se ejecutó el comando `git push` en la terminal para sincronizar el repositorio local con el repositorio remoto. Esto envió los enlaces CDN correctos a GitHub.
 2. **Para el ejercicio 9:** Se modificó la estructura del archivo `ejercicio9.html`. Se envolvió el formulario en un contenedor (`<div class="container mt-5">`) y se agregaron las clases correspondientes a cada elemento (`class="form-control"` para los inputs, `class="form-label"` para los textos y `class="btn btn-primary"` para el botón). Tras aplicar las clases, se guardó (commit) y se subió el cambio (push).
+
+---
+
+## Error 2: Enlace del Ejercicio 10 no visible en línea tras realizar Commit y Push
+
+**Fecha:** 2 de julio de 2026
+
+### Detección
+A pesar de haber agregado el enlace `<li><a href="HTML/ejercicio10.html">Ejercicio 10</a></li>` al archivo `index.html` y haber ejecutado exitosamente la secuencia de subida (`git add .`, `git commit`, `git push`), la página publicada en GitHub Pages no mostraba el botón del Ejercicio 10 al ser visitada en el navegador.
+
+### Diagnóstico
+Tras comprobar que el código de `index.html` en efecto poseía el enlace del Ejercicio 10 y constatar que el historial de Git indicaba que la subida (Push) se había realizado exitosamente al repositorio remoto, se diagnosticó que el problema **no era de código ni de Git**, sino un comportamiento típico de la web:
+1. **Caché del Navegador:** Los navegadores web guardan en la memoria (caché) copias de los sitios que visitamos para cargarlos más rápido. Al refrescar la página de manera normal, el navegador mostraba la versión anterior guardada en memoria.
+2. **Tiempo de despliegue de GitHub Pages (Delay):** A veces, cuando se hace un *Push*, los servidores de GitHub pueden tardar entre 1 y 3 minutos en procesar y desplegar los nuevos cambios al enlace público.
+
+### Solución
+El error no requirió modificaciones adicionales de código para arreglarse, ya que técnicamente el enlace sí estaba correctamente subido. La solución en estos casos es procedimental para el usuario:
+1. **Borrar Caché / Forzar recarga:** Presionar la combinación `Ctrl + F5` (o `Cmd + Shift + R` en Mac) estando en la página para obligar al navegador a descargar los archivos más recientes desde el servidor e ignorar la memoria caché.
+2. **Esperar un par de minutos:** Darle tiempo al servidor de GitHub Pages a que termine su proceso de compilación (build) antes de visualizar.
