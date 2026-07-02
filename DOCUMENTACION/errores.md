@@ -62,3 +62,20 @@ Al aplicarle `form-control` a la etiqueta padre contenedora (`<form>` o `<fields
 3. Se aplicó correctamente la clase `form-control` a los campos de entrada (`<input class="form-control">`).
 4. Se aplicó `btn btn-primary` a los botones.
 5. Tras estas correcciones de código, se ejecutaron `git add .`, `git commit` y `git push` para actualizar la versión en línea con el diseño correcto.
+
+---
+
+## Error 4: La función JavaScript no muestra el resultado en pantalla (Falso error de código)
+
+**Fecha:** 2 de julio de 2026
+
+### Detección
+Tras crear el archivo JavaScript (`ejercicio10.js`) con la función `celsiusToFahrenheit()` y vincularlo en el HTML, al probarlo e introducir un número, el campo de resultado (ya sea `<input>` o `<textarea>`) no mostraba absolutamente nada al presionar el botón de calcular.
+
+### Diagnóstico
+Al revisar minuciosamente la lógica del archivo `ejercicio10.js` y el uso de los métodos DOM (como `document.getElementById('fahrenheit').value`), se concluyó que **el código estaba 100% perfecto y libre de errores sintácticos o lógicos.**
+El problema en realidad fue el mismo que el *Error 2*: probar la página web en GitHub Pages demasiado rápido tras hacer el "Push". Como GitHub Pages tarda un par de minutos en construir la nueva versión del sitio, el archivo `ejercicio10.html` intentó buscar y ejecutar el archivo `../JS/ejercicio10.js` que en ese momento **todavía no existía en el servidor público**. Al no existir el archivo, el botón no hacía nada.
+
+### Solución
+1. **Revertir cambios innecesarios:** Como el usuario pensó que el error era del código HTML, cambió el `<input>` de resultado por un `<textarea>`. Aunque ambos funcionan bien con JavaScript, se restauró a `<input>` ya que es semánticamente más correcto para mostrar un solo número.
+2. **Procedimiento de despliegue:** Simplemente se esperó el minuto reglamentario de construcción de GitHub Pages y se recargó la página borrando caché (`Ctrl + F5`). Tras esto, el script cargó exitosamente y los cálculos se realizaron de manera instantánea.
