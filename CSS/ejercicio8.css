@@ -1,0 +1,72 @@
+/*Estilos generales*/
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #010101ff;
+    margin: 0;
+    padding: 20px;
+    color: #ffffffff;
+}
+
+.contenedor {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #4CAF50;
+}
+
+/*Estilo para tablas*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+td:hover {
+    background-color: #24a8a8;
+}
+
+th {
+    background-color: #111811ff;
+    color: rgb(255, 255, 255);
+}
+
+.laboratorios {
+    background-color: #22f129ff;
+}
+
+.laboratorios:hover {
+    background-color: #073d09;
+}
+
+.notas {
+    text-align: center;
+    font-size: 14px;
+}
+
+.requisito {
+    color: #f2f2f2;
+}
+
+.proyecto {
+    background-color: #e826f2ff;
+}
+
+#Laboratorios1 {
+    background-color: #073d09;
+    text-align: center;
+}
+
+#laboratorios1:hover {
+    background-color: #24a8a8;
+}

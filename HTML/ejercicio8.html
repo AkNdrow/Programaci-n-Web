@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+    <!-- Tu archivo CSS original -->
+    <link rel="stylesheet" href="../CSS/ejercicio8.css">
+</head>
+
+<body>
+    <div class="contenedor">
+        <h1>Horario de clases</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Hora</th>
+                    <th>Lunes</th>
+                    <th>Martes</th>
+                    <th>Miércoles</th>
+                    <th>Jueves</th>
+                    <th>Viernes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Fila 1: 8:00 - 9:00 -->
+                <tr>
+                    <td>8:00 - 9:00</td>
+                    <td colspan="2">Matemáticas</td> <!-- Ocupa Lunes y Martes -->
+                    <td>Programación</td> <!-- Miércoles -->
+                    <td rowspan="2">Base de datos</td> <!-- Ocupa Jueves (8:00 a 10:00) -->
+                    <td>Programación</td> <!-- Viernes -->
+                </tr>
+
+                <!-- Fila 2: 9:00 - 10:00 -->
+                <tr>
+                    <td>9:00 - 10:00</td>
+                    <td>Programación</td> <!-- Lunes -->
+                    <td>Matemáticas</td> <!-- Martes -->
+                    <td rowspan="2" class="Laboratorios">Programación</td> <!-- Ocupa Miércoles (9:00 a 11:00) -->
+                    <!-- Jueves no se escribe aquí porque está ocupado por "Base de datos" de la fila de arriba -->
+                    <td class="proyect">Proyecto final</td> <!-- Viernes -->
+                </tr>
+
+                <!-- Fila 3: 10:00 - 11:00 -->
+                <tr>
+                    <td>10:00 - 11:00</td>
+                    <td>Base de datos</td> <!-- Lunes -->
+                    <td class="Laboratorios">Programación</td> <!-- Martes -->
+                    <!-- Miércoles no se escribe aquí porque está ocupado por "Programación" de la fila de arriba -->
+                    <td>Matemáticas</td> <!-- Jueves -->
+                    <td>Base de datos</td> <!-- Viernes -->
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="notas">
+            <p><em>Horario válido a partir de agosto del 2026</em></p>
+            <p class="requisito">Laboratorios o salas de cómputo: llevar USB y credencial</p>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Bootstrap y SweetAlert2</title>
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body class="bg-light">
+
+    <div class="container mt-5 text-center shadow p-5 bg-white rounded">
+        <h1 class="mb-4 text-primary">¡Hola Mundo con Bootstrap!</h1>
+        <p class="lead">Si ves este texto con una fuente bonita y un botón verde abajo, Bootstrap está funcionando.</p>
+
+        <button id="btnAlerta" class="btn btn-success btn-lg mt-3">
+            Probar SweetAlert2
+        </button>
+    </div>
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+
+    <script>
+        // Seleccionamos el botón por su ID
+        const boton = document.getElementById('btnAlerta');
+
+        // Le agregamos un evento para cuando le den click
+        boton.addEventListener('click', () => {
+            // Disparamos la alerta de SweetAlert2
+            Swal.fire({
+                title: '¡Éxito!',
+                text: 'SweetAlert2 y Bootstrap están conectados y funcionando perfectamente en tu servidor local.',
+                icon: 'success',
+                confirmButtonText: '¡Excelente!'
+            });
+        });
+    </script>
+</body>
+
+</html>
