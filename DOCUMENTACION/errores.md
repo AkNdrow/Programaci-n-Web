@@ -42,3 +42,23 @@ Tras comprobar que el código de `index.html` en efecto poseía el enlace del Ej
 El error no requirió modificaciones adicionales de código para arreglarse, ya que técnicamente el enlace sí estaba correctamente subido. La solución en estos casos es procedimental para el usuario:
 1. **Borrar Caché / Forzar recarga:** Presionar la combinación `Ctrl + F5` (o `Cmd + Shift + R` en Mac) estando en la página para obligar al navegador a descargar los archivos más recientes desde el servidor e ignorar la memoria caché.
 2. **Esperar un par de minutos:** Darle tiempo al servidor de GitHub Pages a que termine su proceso de compilación (build) antes de visualizar.
+
+---
+
+## Error 3: No se aplican los estilos correctamente al formulario del Ejercicio 10
+
+**Fecha:** 2 de julio de 2026
+
+### Detección
+Al intentar arreglar el diseño básico del `ejercicio10.html`, se le aplicó la clase `class="form-control"` directamente a la etiqueta `<form>` en un intento de que Bootstrap estilizara todo el formulario. Sin embargo, el resultado no fue el esperado y los elementos internos seguían viéndose rotos o sin un diseño adecuado.
+
+### Diagnóstico
+El problema radica en un mal uso de las clases de Bootstrap. La clase `form-control` está diseñada exclusivamente para aplicarse a los campos de texto individuales (las etiquetas `<input>`, `<textarea>`, etc.), dándoles bordes redondeados, resaltado al hacer clic y un ancho del 100%.
+Al aplicarle `form-control` a la etiqueta padre contenedora (`<form>` o `<fieldset>`), Bootstrap intenta que todo el bloque se comporte gráficamente como un solo campo de texto gigante. Las etiquetas internas (`<input>`, `<label>`) seguían siendo HTML puro sin clases asignadas, por lo que Bootstrap no sabía cómo estilizarlas individualmente.
+
+### Solución
+1. Se reestructuró el archivo `ejercicio10.html`. En lugar de poner clases incorrectas al contenedor principal, se envolvió el formulario en un bloque de presentación (`<div class="container">` y `<form class="p-4 border">`).
+2. Se le asignó a los títulos la clase `form-label` (`<label class="form-label">`).
+3. Se aplicó correctamente la clase `form-control` a los campos de entrada (`<input class="form-control">`).
+4. Se aplicó `btn btn-primary` a los botones.
+5. Tras estas correcciones de código, se ejecutaron `git add .`, `git commit` y `git push` para actualizar la versión en línea con el diseño correcto.

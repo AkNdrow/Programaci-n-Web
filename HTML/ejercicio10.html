@@ -16,19 +16,34 @@ Haciendo uso de buttons para la conversion.
 </head>
 
 <body>
-    <form class="form-control">
-        <fieldset>
-            <legend>Calculadora de Celsius a Fahrenheit</legend>
-            <label for="celsius">Celsius:</label>
-            <input type="text" id="celsius" name="celsius">
-            <br>
-            <label for="fahrenheit">Fahrenheit:</label>
-            <input type="text" id="fahrenheit" name="fahrenheit" readonly>
-            <br>
-            <button type="submit" value="Convertir">Convertir</button>
-            <button type="reset" value="Limpiar">Limpiar</button>
-        </fieldset>
-    </form>
+    <div class="container mt-5">
+        <form class="p-4 border rounded shadow-sm bg-light" style="max-width: 500px; margin: auto;">
+            <fieldset>
+                <legend class="mb-4 text-primary fw-bold text-center">Calculadora °C a °F</legend>
+                
+                <div class="mb-3">
+                    <label for="celsius" class="form-label fw-semibold">Grados Celsius:</label>
+                    <div class="input-group">
+                        <input type="number" id="celsius" name="celsius" class="form-control" placeholder="Ej: 25">
+                        <span class="input-group-text">°C</span>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <label for="fahrenheit" class="form-label fw-semibold">Grados Fahrenheit:</label>
+                    <div class="input-group">
+                        <input type="text" id="fahrenheit" name="fahrenheit" class="form-control bg-white" readonly placeholder="Resultado">
+                        <span class="input-group-text">°F</span>
+                    </div>
+                </div>
+                
+                <div class="d-flex justify-content-between">
+                    <button type="reset" class="btn btn-secondary px-4">Limpiar</button>
+                    <button type="submit" class="btn btn-primary px-4">Convertir</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
 </body>
 
 </html>
