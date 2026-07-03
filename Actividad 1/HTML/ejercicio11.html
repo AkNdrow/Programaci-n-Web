@@ -1,0 +1,38 @@
+<!--Ejercicio 11. 
+Desarrollar una aplicación web sencilla que convierta la distancia en kilómetros a millas
+utilizando HTML y JavaScript. El usuario ingresará una distancia en kilómetros en un
+campo de texto, y al presionar un botón, la página realizará la conversión y mostrará el
+resultado en millas dentro de una caja de texto que será de solo lectura (readonly), para
+evitar que el usuario edite el resultado.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../JS/ejercicio11.js"></script>
+</head>
+
+<body>
+    <div class="container" style="margin: 50px auto;">
+        <h1>Convertidor de kilómetros a millas</h1>
+        <form>
+            <div class="form-group">
+                <label for="kilometers">Kilómetros:</label>
+                <input type="number" class="form-control" id="kilometers">
+            </div>
+            <button type="button" style="margin: 10px auto;" class="btn btn-primary"
+                onclick="convertirKilometrosAMillas()">Convertir</button>
+        </form>
+        <div class="form-group">
+            <label for="miles">Millas:</label>
+            <input type="text" class="form-control" id="miles" readonly>
+        </div>
+    </div>
+</body>
+
+</html>
