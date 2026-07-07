@@ -1,0 +1,68 @@
+<!--Ejercicio17
+Gestión de Tareas Pendientes con JSON, Local Storage, Funciones,
+Closures y Scope
+Planteamiento del problema:
+Vas a desarrollar una aplicación sencilla de "Gestión de Tareas" que permita al usuario
+agregar, visualizar y eliminar tareas. Las tareas se almacenarán en el Local Storage en
+formato JSON para que los datos persistan incluso después de cerrar el navegador. El
+ejercicio incluirá el uso de funciones, closures, y entenderás cómo funciona el scope en
+JavaScript.
+
+El boton de eliminar tarea debera aparecer en cada tarea lista, ademas este no se debe mostrar si no hay tareas. 
+Local Storage y JSON:
+o Las tareas se almacenan en formato JSON. agregarTarea() convierte el
+array de tareas a JSON usando JSON.stringify() antes de almacenarlo en
+Local Storage.
+o obtenerTareas() recupera las tareas y usa JSON.parse() para convertirlas
+de JSON a un array JavaScript.
+2. Funciones Flecha y Closures:
+o manejarTareas es un closure que encapsula la lógica de agregar y eliminar
+tareas. Esto permite que las funciones agregar y eliminar se mantengan
+privadas dentro del closure, protegiendo su estado.
+
+3. Scope:
+o Las variables como tareas tienen scope local dentro de las funciones
+agregarTarea() y obtenerTareas(). No se puede acceder a estas
+variables desde fuera de esas funciones, lo que asegura que el manejo de las
+tareas sea seguro.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 17</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/ejercicio17.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../JS/ejercicio17.js"></script>
+</head>
+
+<body>
+    <header class="navbar">
+        <div id="DH1">
+            <h1 id="HH1">Gestión de Tareas</h1>
+        </div>
+        <div id="DH2">
+        </div>
+    </header>
+    <div class="container" style="margin: 40px auto;">
+        <form>
+            <div class="form-group" style="margin: 10px auto;">
+                <label for="task">Tarea:</label>
+                <input type="text" class="form-control" id="task" placeholder="Ingrese la tarea">
+            </div>
+            <button type="button" class="BT1" onclick="agregarTarea()">Agregar</button>
+            <button type="button" class="BT1" onclick="obtenerTareas()">Obtener</button>
+            <button type="button" class="BT1" onclick="renderizarTareas()">Mostrar</button>
+        </form>
+        <div class="tasks" style="margin: 10px auto;">
+            <label for="tasks">Tareas:</label>
+            <div id="tasks"></div>
+        </div>
+    </div>
+</body>
+
+</html>
